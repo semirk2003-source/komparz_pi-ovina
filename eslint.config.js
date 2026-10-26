@@ -18,4 +18,12 @@ export default defineConfig([
       parserOptions: { ecmaFeatures: { jsx: true } },
     },
   },
+  {
+    files: ['supabase/functions/**/*.js'],
+    languageOptions: { globals: { ...globals.browser, Deno: 'readonly' } },
+  },
+  {
+    files: ['scripts/**/*.{js,mjs}'],
+    languageOptions: { globals: globals.node },
+  },
 ])

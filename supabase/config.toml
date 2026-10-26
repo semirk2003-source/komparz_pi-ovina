@@ -1,0 +1,9 @@
+# Konfigurácia pre Supabase CLI (nasadenie Edge Functions).
+# Projekt sa prepája príkazom: supabase link --project-ref <id-projektu>
+project_id = "komparz-stupak"
+
+[functions.invite-user]
+# Funkcia je v JavaScripte, nie v TypeScripte.
+entrypoint = "./functions/invite-user/index.js"
+# Supabase overí, že volajúci posiela platný prihlasovací token.
+verify_jwt = true
